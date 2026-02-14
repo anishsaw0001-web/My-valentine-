@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Favorite Person</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@300;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <style>
+        :root {
+            --rose: #ff4d6d;
+            --blush: #ffb3c1;
+            --cream: #fff0f3;
+        }
+        body {
+            margin: 0;
+            font-family: 'Quicksand', sans-serif;
+            background-color: var(--cream);
+            color: #590d22;
+            scroll-behavior: smooth;
+        }
+        nav {
+            position: fixed;
+            top: 0; width: 100%;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(5px);
+            display: flex; justify-content: center;
+            padding: 1rem 0; z-index: 1000;
+        }
+        nav a {
+            margin: 0 15px; text-decoration: none;
+            color: var(--rose); font-weight: bold; font-size: 0.9rem;
+        }
+        section {
+            min-height: 100vh;
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            padding: 40px 20px; text-align: center;
+        }
+        h1 { font-family: 'Dancing Script', cursive; font-size: 4rem; color: var(--rose); }
+        .card {
+            background: white; padding: 2rem;
+            border-radius: 20px; box-shadow: 0 10px 30px rgba(255, 77, 109, 0.1);
+            max-width: 600px; width: 90%;
+        }
+        .btn {
+            background: var(--rose); color: white;
+            border: none; padding: 15px 30px;
+            border-radius: 50px; cursor: pointer;
+            font-size: 1.2rem; transition: transform 0.2s;
+        }
+        .btn:hover { transform: scale(1.1); }
+        img { max-width: 100%; border-radius: 15px; margin: 10px 0; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#timeline">Our Story</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#why">Why You</a>
+        <a href="#question">The Big Question</a>
+    </nav>
+
+    <section id="home">
+        <h1>Happy Valentine's Day</h1>
+        <p>I made something special just for you.</p>
+        <a href="#timeline" class="btn">Click to Start</a>
+    </section>
+
+    <section id="timeline">
+        <div class="card">
+            <h2>Our Journey</h2>
+            <p>🗓️ <strong>Sept 14:</strong> The day we first met.</p>
+            <p>☕ <strong>Oct 02:</strong> Our first coffee date.</p>
+            <p>❤️ <strong>Dec 25:</strong> When I knew you were the one.</p>
+        </div>
+    </section>
+
+    <section id="gallery">
+        <h2>My Favorite Views</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; max-width: 800px;">
+            <img src="https://via.placeholder.com/300" alt="Us">
+            <img src="https://via.placeholder.com/300" alt="Us">
+            <img src="https://via.placeholder.com/300" alt="Us">
+        </div>
+    </section>
+
+    <section id="why">
+        <div class="card">
+            <h2>Why I Love You</h2>
+            <ul style="list-style: none; padding: 0; line-height: 2;">
+                <li>✨ The way you make me laugh.</li>
+                <li>🌙 Our late night conversations.</li>
+                <li>🍰 Your obsession with chocolate cake.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="question">
+        <h1>Will you be my Valentine?</h1>
+        <button class="btn" onclick="celebrate()">YES! ❤️</button>
+    </section>
+
+    <script>
+        function celebrate() {
+            confetti({
+                particleCount: 150,
+                spread: 70,
+                origin: { y: 0.6 },
+                colors: ['#ff4d6d', '#ffb3c1', '#ffffff']
+            });
+            alert("Yay! I'm the luckiest person alive! 🌹");
+        }
+    </script>
+</body>
+</html>
